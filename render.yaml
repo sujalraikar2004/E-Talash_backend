@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: treasure-hunt-server
+    runtime: node
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
